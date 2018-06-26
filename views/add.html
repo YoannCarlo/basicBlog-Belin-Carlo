@@ -1,0 +1,33 @@
+doctype html 
+head
+	link(rel="stylesheet", href="/assets/css/style.css")
+	title TD Basic Blog - Ajouter un article
+body
+	div.website-name TD Basic Blog
+	div.nav
+		a(href="/")
+			div.nav-elem Liste
+		a
+			div.nav-elem.current-page Ajouter
+	div.content
+		div.form
+			form(action='/post/create', method='POST')
+				table
+					tr
+						td
+							label Titre
+						td
+							input(type="text", name="titre", required)
+					tr
+						td
+							label Auteur
+						td
+							input(type="text", name="auteur", required)
+					tr
+						td
+							label Résumé
+						td
+							input(type="text", name="resume", required)
+					tr
+						td(colspan="2")
+							input(type="submit", value="Ajouter").submit

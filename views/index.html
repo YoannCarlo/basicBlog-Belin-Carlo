@@ -1,0 +1,27 @@
+doctype html 
+head
+	link(rel="stylesheet", href="/assets/css/style.css")
+	title TD Basic Blog - Liste des articles
+body
+	div.website-name TD Basic Blog
+	div.nav
+		a
+			div.nav-elem.current-page Liste
+		a(href="/post/create")
+			div.nav-elem Ajouter
+	div.content
+		each article in articles
+			div.element
+				div.inside
+					div.title #{article.titre}
+					div.date créé le #{article.date}
+					div.author par #{article.auteur}
+					div.summary #{article.resume}
+				div.inside.buttons
+					div
+						a(href="/post/" + article._id)
+							input(type="submit", value="Voir plus").submit
+					div
+						form(action='/post', method='GET')
+							input(type="hidden", name="id", value=article._id)
+							input(type="submit", value="Supprimer").submit
